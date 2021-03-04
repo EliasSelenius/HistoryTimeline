@@ -1,0 +1,36 @@
+
+
+
+* {
+    background-color: #1e1e1e;
+    color: #d4d4d4;
+    border-color: dimgray;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    outline: 0;
+}
+
+/*replacing ugly default outline*/
+*:focus {
+    background-color: #2e2e2e;
+}
+
+
+
+input,
+button,
+textarea {
+    background-color: #242424;
+    border: 1px solid dimgray;
+}
+
+input:hover,
+button:hover {
+    background-color: #2e2e2e
+}
+
+input:active,
+button:active {
+    background-color: #3e3e3e
+}
