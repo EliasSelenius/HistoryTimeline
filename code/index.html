@@ -12,5 +12,49 @@
 </head>
 <body>
     <h1>Hello World</h1>
+
+    <style>
+
+        /*
+            opply: 1688-1789
+            roman: 1790-1850
+        */
+
+        #opply {
+            left: 30px;
+            width: 210px;
+        }
+        #roman {
+            width: 150px;
+            left: 200px;
+        }
+
+        .timeline-view {
+            height: 500px;
+
+            border: 3px solid #73AD21;
+        
+        }
+        .timeline-view div {
+            height: 30px;
+        }
+        .timeline-view div:nth-child(even) {
+            background-color: #73AD21;
+        }
+        .timeline-view div div {
+            height: 100%;
+
+            background-color: aliceblue;
+            display: inline-block;            
+        }
+    </style>
+
+    <div class="timeline-view">
+        <div>
+            <div id="opply"></div>
+            <div id="roman"></div>
+        </div>
+    </div>
+
 </body>
 </html>
