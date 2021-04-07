@@ -90,12 +90,13 @@ class TimelineMarker extends HTMLElement {
     constructor() {
         super();
 
-
         this.year = 0;
 
     }
 
     connectedCallback() {
+        if (this.hasAttribute("year")) this.year = Number.parseInt(this.getAttribute("year"));
+
         this.updateLocation();
     }
 

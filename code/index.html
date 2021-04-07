@@ -41,20 +41,26 @@
 
         time-line-marker {
             position: absolute;
-            border-left: 4px solid white;
+            border-left: 2px solid white;
             top: 50%;
 
 
             height: 20px;
             margin-top: -10px;
-            margin-left: -2px;
+            margin-left: -1px;
 
             display: inline-block;
 
             white-space: nowrap;
+
+            user-select: none;
         }
 
-        
+        time-line-marker div {
+            color: gray;
+            transform: translateY(30px) rotate(45deg);
+            background-color: #0000;
+        }
         
     </style>
 
@@ -68,7 +74,9 @@
     <time-line>
         <hr>
 
-
+        <time-line-marker year="1650">
+            <div>Elias</div>
+        </time-line-marker>
 
     </time-line>
 

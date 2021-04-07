@@ -12,7 +12,41 @@
         "year": 1945
     },
     {
-        "name": "1700",
-        "year": 1700
+        "name": "Den engelske borgerkrigen",
+        "year": 1642,
+        "endyear": 1652
+    },
+    {
+        "name": "The glorious revolution",
+        "year": 1688
+    },
+    {
+        "name": "\"Two treatises of government\" av John Locke",
+        "year": 1689
+    },
+    {
+        "name": "England og Skottland ble til Storbritannia",
+        "year": 1707
+    },
+    {
+        "name": "Frankrike ble republikk",
+        "year": 1792
+    },
+    {
+        "name": "Napoleons statskupp",
+        "year": 1799
+    },
+    {
+        "name": "Napoleonskrigene",
+        "year": 1803,
+        "endyear": 1815
+    },
+    {
+        "name": "Slaget ved Waterloo",
+        "year": 1815
+    },
+    {
+        "name": "Amerikanske børskrakket",
+        "year": 1929
     }
 ]
