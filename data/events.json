@@ -1,7 +1,15 @@
 [
     {
-        "name": "grunnlov",
+        "name": "Norsk grunnlov",
         "year": 1814
+    },
+    {
+        "name": "Start of world war II",
+        "year": 1939
+    },
+    {
+        "name": "End of world war II",
+        "year": 1945
     },
     {
         "name": "1700",
