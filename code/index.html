@@ -30,6 +30,9 @@
             border-radius: 60px;
 
             overflow: hidden;
+
+            user-select: none;
+
         }
 
         time-line hr {
@@ -49,17 +52,21 @@
             margin-top: -10px;
             margin-left: -1px;
 
-            display: inline-block;
+
 
             white-space: nowrap;
 
-            user-select: none;
+            background-color: rgba(0, 0, 0, 0);
+
+
         }
 
         time-line-marker div {
             color: gray;
-            transform: translateY(30px) rotate(45deg);
-            background-color: #0000;
+            font-size: smaller;
+            transform: translateY(calc(100% + 4px)) rotate(45deg);
+            transform-origin: left center;
+
         }
         
     </style>

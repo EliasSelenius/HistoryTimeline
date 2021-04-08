@@ -5,7 +5,8 @@
     },
     {
         "name": "Start of world war II",
-        "year": 1939
+        "year": 1939,
+        "endyear": 1945
     },
     {
         "name": "End of world war II",

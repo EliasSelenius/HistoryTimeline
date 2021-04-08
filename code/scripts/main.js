@@ -74,7 +74,11 @@ class TimelineComponent extends HTMLElement {
     createMarker(year, name) {
         var marker = document.createElement('time-line-marker');
         marker.year = year;
-        marker.innerText = name;
+
+        let d = document.createElement('div');
+        d.innerText = name;
+        marker.appendChild(d);
+
         this.appendChild(marker);
 
     }
