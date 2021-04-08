@@ -2,17 +2,24 @@
 console.log("Hello World");
 
 
-let leftView = 1600, rightView = 1900;
-
 class TimelineComponent extends HTMLElement {
+
+    _draging = false;
+    leftView = 1600;
+    rightView = 1900;
+
+    get range() { return this.rightView - this.leftView; }
+
+    static instance;
+
     constructor() {
         super();
-        /*this.addEventListener('onscroll', (el, e) => {
-            console.log("sc");
-        });*/
+
+        TimelineComponent.instance = this;
+
 
         this.onwheel = e => {
-            this.zoomTimeline(e.deltaY / 10);
+            this.zoomTimeline(e.deltaY / this.range * 10);
         }
 
         this.onmousedown = e => {
@@ -25,37 +32,37 @@ class TimelineComponent extends HTMLElement {
 
         this.onmousemove = e => {
             if (this._draging) {
-                this.panTimeline(e.movementX);
+                this.panTimeline(-e.movementX * this.range / 1000);
             }
         }
     }
 
-    zoomTimeline(zoomlevel) {
-        leftView -= zoomlevel;
-        rightView += zoomlevel;
+    zoomTimeline(years) {
+        if (this.range < 0 && years < 0) return;
+
+        this.leftView -= years;
+        this.rightView += years;
         this.updateView();
     }
 
-    panTimeline(pan) {
-
-        const scale = (rightView - leftView) / 1000;
-
-        leftView -= pan * scale;
-        rightView -= pan * scale;
+    panTimeline(years) {
+        this.leftView += years;
+        this.rightView += years;
         this.updateView();
     }
 
     updateView() {
-        if (leftView > rightView) {
-            leftView = rightView = (leftView + rightView) / 2;
-            leftView -= 1; rightView += 1;
-            return;
-        }
+
+        document.body.querySelector('#title').innerText = 'Timeline from ' + 
+            Math.round(this.leftView) + ' to ' + Math.round(this.rightView) + 
+            ', a period of ' + Math.round(this.range) + ' years'; 
 
         const markers = this.getElementsByTagName('time-line-marker');
         for (let i = 0; i < markers.length; i++) {
             markers.item(i).updateLocation();
         }
+
+
     }
 
     connectedCallback() {
@@ -91,10 +98,11 @@ customElements.define('time-line', TimelineComponent);
 
 
 class TimelineMarker extends HTMLElement {
+
+    year = 0;
+
     constructor() {
         super();
-
-        this.year = 0;
 
     }
 
@@ -105,7 +113,7 @@ class TimelineMarker extends HTMLElement {
     }
 
     updateLocation() {
-        const p = (this.year - leftView) / (rightView - leftView) * 100;
+        const p = (this.year - TimelineComponent.instance.leftView) / (TimelineComponent.instance.range) * 100;
         this.style.left = p + '%';
     }
 
