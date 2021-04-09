@@ -19,7 +19,7 @@ class TimelineComponent extends HTMLElement {
 
 
         this.onwheel = e => {
-            this.zoomTimeline(e.deltaY / this.range * 10);
+            this.zoomTimeline((e.deltaY / Math.abs(e.deltaY)) * (this.range / 30));
         }
 
         this.onmousedown = e => {
@@ -38,7 +38,7 @@ class TimelineComponent extends HTMLElement {
     }
 
     zoomTimeline(years) {
-        if (this.range < 0 && years < 0) return;
+        if (this.range < 1 && years < 0) return; // makes it impossible to scroll under one year
 
         this.leftView -= years;
         this.rightView += years;
@@ -66,7 +66,7 @@ class TimelineComponent extends HTMLElement {
     }
 
     connectedCallback() {
-        this.updateView(1500, 1750);
+        this.updateView();
 
         fetch('../data/events.json').then(x => x.json()).then(x => {
             for (let i = 0; i < x.length; i++) {
