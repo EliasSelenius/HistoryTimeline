@@ -47,7 +47,6 @@
             border-left: 2px solid white;
             top: 50%;
 
-
             height: 20px;
             margin-top: -10px;
             margin-left: -1px;
@@ -61,12 +60,20 @@
 
         }
 
-        time-line-marker div {
+        time-line-marker .title {
             color: gray;
             font-size: smaller;
             transform: translateY(calc(100% + 4px)) rotate(45deg);
             transform-origin: left center;
+        }
 
+        time-line-marker .year {
+            display: inline;
+            position: absolute;
+            top: -100%;
+            transform: translateX(calc(-50% - 2px));
+
+            background-color: rgba(0, 0, 0, 0);
         }
         
     </style>
@@ -76,13 +83,17 @@
 <body>
     <h1 id="title">Timeline</h1>
 
-    
+    <template id="time-line-marker-template">
+        <div class="title">Elias</div>
+        <div class="year">1650</div>
+    </template>
 
     <time-line>
         <hr>
 
         <time-line-marker year="1650">
-            <div>Elias</div>
+            <div class="title">Elias</div>
+            <div class="year">1650</div>
         </time-line-marker>
 
     </time-line>

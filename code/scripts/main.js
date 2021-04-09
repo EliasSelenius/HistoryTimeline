@@ -5,8 +5,8 @@ console.log("Hello World");
 class TimelineComponent extends HTMLElement {
 
     _draging = false;
-    leftView = 1600;
-    rightView = 1900;
+    leftView = 1683;
+    rightView = 1700;
 
     get range() { return this.rightView - this.leftView; }
 
@@ -83,7 +83,13 @@ class TimelineComponent extends HTMLElement {
         marker.year = year;
 
         let d = document.createElement('div');
+        d.classList.add('title');
         d.innerText = name;
+        marker.appendChild(d);
+
+        d = document.createElement('div');
+        d.classList.add('year');
+        d.innerText = year;
         marker.appendChild(d);
 
         this.appendChild(marker);
@@ -120,3 +126,9 @@ class TimelineMarker extends HTMLElement {
 }
 
 customElements.define('time-line-marker', TimelineMarker);
+
+
+function getFromTemplate(templateID, el) {
+    const t = document.getElementById(templateID);
+    
+}
