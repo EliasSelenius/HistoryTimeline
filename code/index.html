@@ -7,6 +7,7 @@
     <title>History Timeline</title>
     
     <script src="scripts/main.js"></script>
+    <script src="scripts/TimelineMarker.js"></script>
 
     <link rel="stylesheet" href="css/main.css">
 
@@ -68,6 +69,8 @@
         }
 
         time-line-marker .year {
+            font-size: smaller;
+
             display: inline;
             position: absolute;
             top: -100%;
@@ -84,8 +87,8 @@
     <h1 id="title">Timeline</h1>
 
     <template id="time-line-marker-template">
-        <div class="title">Elias</div>
-        <div class="year">1650</div>
+        <div class="title"></div>
+        <div class="year"></div>
     </template>
 
     <time-line>

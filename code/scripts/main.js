@@ -19,6 +19,7 @@ class TimelineComponent extends HTMLElement {
 
 
         this.onwheel = e => {
+            e.preventDefault();
             this.zoomTimeline((e.deltaY / Math.abs(e.deltaY)) * (this.range / 30));
         }
 
@@ -100,32 +101,6 @@ class TimelineComponent extends HTMLElement {
 }
 customElements.define('time-line', TimelineComponent);
 
-
-
-
-class TimelineMarker extends HTMLElement {
-
-    year = 0;
-
-    constructor() {
-        super();
-
-    }
-
-    connectedCallback() {
-        if (this.hasAttribute("year")) this.year = Number.parseInt(this.getAttribute("year"));
-
-        this.updateLocation();
-    }
-
-    updateLocation() {
-        const p = (this.year - TimelineComponent.instance.leftView) / (TimelineComponent.instance.range) * 100;
-        this.style.left = p + '%';
-    }
-
-}
-
-customElements.define('time-line-marker', TimelineMarker);
 
 
 function getFromTemplate(templateID, el) {
