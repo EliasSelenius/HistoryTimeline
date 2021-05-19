@@ -1,0 +1,17 @@
+
+sources:
+    https://www.youtube.com/watch?v=exVKd-x5QVc&ab_channel=JohnDRuddy
+
+
+begrep:
+    oppdemming - USAs strategi for at komunismen ikke skulle spre seg
+    stedfortrederkrig/proxy-krig - å få andre til å kjempe kampen for deg. kan for eksempel gjøres ved å støtte en part i en krig
+
+vietnamkrig: 1954-1975
+
+US presidenter
+    53-60: Dwight D. Eisenhower  (republican)
+    61-62: John F. Kennedy       (democrat)
+    63-68: Lyndon B. Johnson     (democrat)
+    69-73: Richard M. Nixon	     (republican)
+    74-76: Gerald Ford           (republican)
