@@ -1,7 +1,7 @@
 
 sources:
     https://www.youtube.com/watch?v=exVKd-x5QVc&ab_channel=JohnDRuddy
-
+    https://www.history.com/topics/vietnam-war/vietnam-war-timeline
 
 begrep:
     oppdemming - USAs strategi for at komunismen ikke skulle spre seg
@@ -10,8 +10,40 @@ begrep:
 vietnamkrig: 1954-1975
 
 US presidenter
+    45-52: Harry S. Truman       (democrat)
     53-60: Dwight D. Eisenhower  (republican)
     61-62: John F. Kennedy       (democrat)
     63-68: Lyndon B. Johnson     (democrat)
-    69-73: Richard M. Nixon	     (republican)
+    69-73: Richard M. Nixon      (republican)
     74-76: Gerald Ford           (republican)
+
+
+1923-25: vietnametisk nasjonalist Ho Chi Minh blir trent av Sovietunionen
+
+1940:
+    Juni: Nazi Tyskland tar kontroll over Frankrike
+    September: japan invaderer franske indokina og okkuperer Vietnam
+
+1941: Ho Chi Minh etablerer Viet Minh. har mål om og bekjempe Franske og japanske okkupanter
+
+1945:
+    Mars: japanske soldater utfører et kupp mot franske autoriteter i indokina, 
+        å deklarerer Vietnam, Laos, og Kambodsja selvstendig.
+    August: japan blir bekjempet i ww2. Frankrike gjentar kontroll over Vietnam.
+    September: Ho Chi Minh deklarerer nord-Vietnam selvstendig
+
+1946 Juli: Viet Minh starter geriljakrig mot franske okkupanter
+
+1947 Mars: Truman-doktrinen
+
+1949: 
+    Juni: franskemennene gjør Bao Dai til statshode i Vietnam
+    August: Sovietunionen tester sin første atombombe. markerer et anspent vendepunkt i den kaldekrigen
+    October: komunist Mao Zedong deklarerer the Peoples Republic of China.
+1950:
+    Januar: the Peoples Republic of China & Sovietunionen gir militær/økonomisk hjelp til communist Democratic Republic of Vietnam
+    Februar: med Sovietunionen & komunistkina i ryggen trappet Viet Minh offensen opp mot franskemennene i Vietnam
+    Juni: USA identifiserer Viet Minh som en komunisttrusel, trapper opp militærstøtte til franskemennene
+1954 
+    Mars-Mai: franskemennene fikk et ydmykende nederlag i Dien Bien Phu (by i nord-Vietnam) av Viet Minh. nederlaget markerer slutten på Fransk kontroll i indokina
+    April: Dwight D. Eisenhower "Domino effekt"
