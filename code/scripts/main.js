@@ -1,5 +1,9 @@
 
-console.log("Hello World");
+
+function calcRelPos(year) {
+    return (year - TimelineComponent.instance.leftView) / (TimelineComponent.instance.range) * 100;
+}
+
 
 
 class TimelineComponent extends HTMLElement {
@@ -7,6 +11,7 @@ class TimelineComponent extends HTMLElement {
     _draging = false;
     leftView = 1683;
     rightView = 1700;
+    yearMarkerContainer = null;
 
     get range() { return this.rightView - this.leftView; }
 
@@ -36,7 +41,11 @@ class TimelineComponent extends HTMLElement {
                 this.panTimeline(-e.movementX * this.range / 1000);
             }
         }
+
+
     }
+
+
 
     zoomTimeline(years) {
         if (this.range < 1 && years < 0) return; // makes it impossible to scroll under one year
@@ -63,11 +72,43 @@ class TimelineComponent extends HTMLElement {
             markers.item(i).updateLocation();
         }
 
+        { // year markers
+
+
+            const yearMarkers = this.getElementsByClassName('time-line-year-markers').item(0).children;
+        
+
+            const yearsCount = Math.ceil(this.range);
+            const leftYear = Math.floor(this.leftView);
+            
+            //const interval = Math.floor(yearsCount / 20);
+
+            for (let i = 0; i < yearsCount; i += 1 ) {
+                const y = leftYear + i;
+                const relp = calcRelPos(y);
+                const div = yearMarkers.item(i);
+                div.style.left = relp + "%";
+                div.innerText = y;
+                //this.createMarker(y, "Test: " + y);
+            } 
+        }
 
     }
 
     connectedCallback() {
-        this.updateView();
+        
+        { // year markers
+            this.yearMarkerContainer = document.createElement('div');
+            this.yearMarkerContainer.className = 'time-line-year-markers';
+            this.appendChild(this.yearMarkerContainer);
+            for (let i = 0; i < 50; i++) {
+                const div = document.createElement('div');
+                div.innerText = "Hello";
+                this.yearMarkerContainer.appendChild(div);
+            }        
+        }
+
+        
 
         fetch('../data/events.json').then(x => x.json()).then(x => {
             for (let i = 0; i < x.length; i++) {
@@ -75,7 +116,11 @@ class TimelineComponent extends HTMLElement {
                 this.createMarker(event.year, event.name);
             }
         });
+        
+        
 
+        
+        this.updateView();
     }
 
 
@@ -106,4 +151,12 @@ customElements.define('time-line', TimelineComponent);
 function getFromTemplate(templateID, el) {
     const t = document.getElementById(templateID);
     
+}
+
+function roundToDecade(year) {
+    return Math.round(year / 10) * 10;
+}
+
+function floorToDecade(year) {
+    return Math.floor(year / 10) * 10;
 }

@@ -6,10 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>History Timeline</title>
     
+    
+    <link rel="stylesheet" href="css/main.css">
+
     <script src="scripts/main.js"></script>
     <script src="scripts/TimelineMarker.js"></script>
 
-    <link rel="stylesheet" href="css/main.css">
 
     <style>
 
@@ -78,6 +80,16 @@
 
             background-color: rgba(0, 0, 0, 0);
         }
+
+
+        .time-line-year-markers {
+        }
+        .time-line-year-markers div {
+            position: absolute;
+            border-left: 1px solid white;
+            height: 25%;
+            top: 25%;
+        }
         
     </style>
 
@@ -92,6 +104,7 @@
     </template>
 
     <time-line>
+
         <hr>
 
         <time-line-marker year="1650">
@@ -100,6 +113,7 @@
         </time-line-marker>
 
     </time-line>
+
 
 </body>
 </html>

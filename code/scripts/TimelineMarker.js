@@ -15,10 +15,12 @@ class TimelineMarker extends HTMLElement {
     }
 
     updateLocation() {
-        const p = (this.year - TimelineComponent.instance.leftView) / (TimelineComponent.instance.range) * 100;
+        const p = calcRelPos(this.year);
         this.style.left = p + '%';
     }
 
 }
 
 customElements.define('time-line-marker', TimelineMarker);
+
+
